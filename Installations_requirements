@@ -1,0 +1,12 @@
+⚙️ Installation Requirements for Timetable Generator App
+
+                                1️⃣ Software / Tools
+
+| Tool / Software                 | Version / Notes       | Purpose                              |
+| ------------------------------- | --------------------- | ------------------------------------ |
+| Python                          | 3.10 or higher        | Main programming language            |
+| MySQL                           | 8.0 or higher         | Database management                  |
+| MySQL Workbench (optional)      | Latest version        | GUI to view and manage database      |
+| Git                             | Latest stable version | Version control / GitHub integration |
+| VS Code / PyCharm / Sublime     | Any modern editor     | Code editing                         |
+| pip                             | Latest                | Python package manager               |
