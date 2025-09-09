@@ -1,0 +1,82 @@
+1️⃣ Teachers
+| Field       | Type    | Description       | Example Data                                |
+| ----------- | ------- | ----------------- | ------------------------------------------- |
+| teacher_id  | INT PK  | Unique teacher ID | 1, 2, 3                                     |
+| name        | VARCHAR | Teacher name      | "Alice Smith"                               |
+| email       | VARCHAR | Teacher email     | "[alice@gmail.com](mailto:alice@gmail.com)" |
+| phone       | VARCHAR | Contact number    | "9876543210"                                |
+| department  | VARCHAR | Department        | "Computer Science"                          |
+
+Example rows:
+| teacher_id | name         | email                                     | phone      | department       |
+| ----------- | ----------- | ----------------------------------------- | ---------- | ---------------- |
+| 1           | Alice Smith | [alice@gmail.com](mailto:alice@gmail.com) | 9876543210 | Computer Science |
+| 2           | Bob Kumar   | [bob@gmail.com](mailto:bob@gmail.com)     | 9876543211 | Mathematics      |
+
+2️⃣ Subjects
+
+| Field       | Type    | Description                     | Example Data       |
+| ----------- | ------- | ------------------------------- | ------------------ |
+| subject\_id | INT PK  | Unique subject ID               | 1, 2, 3            |
+| name        | VARCHAR | Subject name                    | "DBMS"             |
+| department  | VARCHAR | Department offering the subject | "Computer Science" |
+
+Example rows:
+| subject_id | name  | department       |
+| ----------- | ----- | ---------------- |
+| 1           | DBMS  | Computer Science |
+| 2           | Maths | Mathematics      |
+
+3️⃣ Classrooms
+| Field         | Type    | Description         | Example Data |
+| ------------- | ------- | ------------------- | ------------ |
+| classroom_id | INT PK  | Unique classroom ID | 101, 102     |
+| name          | VARCHAR | Room name or number | "Lab1"       |
+| capacity      | INT     | Seating capacity    | 40           |
+
+Example rows:
+| classroom_id | name | capacity |
+| ------------- | ---- | -------- |
+| 101           | Lab1 | 40       |
+| 102           | Lab2 | 35       |
+
+4️⃣ Batches / Classes
+| Field      | Type    | Description      | Example Data       |
+| ---------- | ------- | ---------------- | ------------------ |
+| batch_id  | INT PK  | Unique batch ID  | 1, 2               |
+| name       | VARCHAR | Batch name       | "CS-A", "CS-B"     |
+| year       | INT     | Year of students | 2                  |
+| department | VARCHAR | Department       | "Computer Science" |
+
+Example rows:
+| batch_id | name | year | department       |
+| --------- | ---- | ---- | ---------------- |
+| 1         | CS-A | 2    | Computer Science |
+| 2         | CS-B | 2    | Computer Science |
+
+5️⃣ Timetable
+| Field         | Type    | Description               | Example Data |
+| ------------- | ------- | ------------------------- | ------------ |
+| timetable_id | INT PK  | Unique timetable entry ID | 1, 2         |
+| batch_id     | INT FK  | Batch attending the class | 1            |
+| subject_id   | INT FK  | Subject being taught      | 1            |
+| teacher_id   | INT FK  | Teacher for the subject   | 1            |
+| classroom_id | INT FK  | Classroom assigned        | 101          |
+| day          | VARCHAR | Day of the week           | "Monday"     |
+| start_time   | TIME    | Class start time          | "09:00:00"   |
+| end_time     | TIME    | Class end time            | "10:00:00"   |
+
+Example rows:
+| timetable_id  | batch_id  |  subject_id | teacher_id  | classroom_id  |  day   | start_time  | end_time  |
+| ------------- | --------- | ----------- | ----------- | ------------- | ------ | ----------- | --------- |
+| 1             | 1         | 1           | 1           | 101           | Monday | 09:00:00    | 10:00:00  |
+| 2             | 1         | 2           | 2           | 102           | Monday | 10:00:00    | 11:00:00  |
+
+
+6️⃣ Admin Table
+| Field    | Type    | Description    | Example Data    |
+| -------- | ------- | -------------- | --------------- |
+| user_id | INT PK   | Unique user ID | 1               |
+| username | VARCHAR | Login username | "admin"         |
+| password | VARCHAR | Login password | "hashed\_pw"    |
+| role     | VARCHAR | User role      | "admin/teacher" |
